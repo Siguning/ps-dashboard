@@ -13,9 +13,7 @@ export async function POST({ request, cookies }) {
 
 		const jsonString = JSON.stringify(data, null, 2);
 
-		console.log(jsonString);
 		const result = await redisClient.set("problemsets", jsonString);
-		console.log(result);
 
 		return json({ success: true, message: 'Problemsets saved successfully.' });
 
