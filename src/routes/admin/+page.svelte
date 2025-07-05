@@ -5,7 +5,7 @@
     import { Label } from '$lib/components/ui/label/index.js';
     import { Textarea } from '$lib/components/ui/textarea/index.js';
     import { Plus, Trash2, ArrowUp, ArrowDown, Edit, Save, ArrowLeft, Loader2 } from '@lucide/svelte';
-    import {type SvelteComponent, tick} from 'svelte';
+    import { onMount, type SvelteComponent, tick } from 'svelte';
 
     interface Problem {
         number: string;
@@ -41,23 +41,14 @@
     $effect(() => {
         if (data.isAuthenticated) {
             local_state = 'list';
-            loadData();
         } else {
             local_state = 'password';
         }
     });
 
-    async function loadData() {
-        try {
-            const response = await fetch('/problemsets.json');
-            const data = await response.json();
-            // Create a deep copy for editing to avoid mutating original data accidentally
-            problemsets = JSON.parse(JSON.stringify(data.problemsets));
-        } catch(e) {
-            console.error("Failed to load problemsets.json", e);
-            alert("Could not load problemsets.json. Make sure the file exists in the 'static' directory.");
-        }
-    }
+    onMount(() => {
+        problemsets = data.problemsets;
+    });
 
     // --- Problemset Management ---
     function addProblemset() {
@@ -185,7 +176,7 @@
 
             const result = await response.json();
             if (result.success) {
-                alert('변경 사항이 서버에 성공적으로 저장되었습니다.\n\n(참고: 변경사항이 사이트에 반영되려면 재배포가 필요할 수 있습니다.)');
+                alert('변경 사항이 서버에 성공적으로 저장되었습니다');
             } else {
                 throw new Error(result.message);
             }

@@ -1,6 +1,5 @@
 import { json } from '@sveltejs/kit';
-import fs from 'fs';
-import path from 'path';
+import redisClient from '$lib/server/redis';
 
 export async function POST({ request, cookies }) {
 	const isAuthenticated = cookies.get('authenticated');
@@ -14,8 +13,9 @@ export async function POST({ request, cookies }) {
 
 		const jsonString = JSON.stringify(data, null, 2);
 
-		const filePath = path.join(process.cwd(), 'static', 'problemsets.json');
-		fs.writeFileSync(filePath, jsonString, 'utf8');
+		console.log(jsonString);
+		const result = await redisClient.set("problemsets", jsonString);
+		console.log(result);
 
 		return json({ success: true, message: 'Problemsets saved successfully.' });
 

@@ -4,11 +4,10 @@
     import * as Card from '$lib/components/ui/card/index.js';
     import { ArrowRight } from '@lucide/svelte';
 
+    let { data } = $props();
     let problemsets = $state([]);
 
-    onMount(async () => {
-        const response = await fetch('/problemsets.json');
-        const data = await response.json();
+    onMount(() => {
         problemsets = data.problemsets;
     });
 </script>
