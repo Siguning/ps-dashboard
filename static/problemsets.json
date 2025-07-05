@@ -1,0 +1,80 @@
+{
+  "problemsets": [
+    {
+      "id": "ps-2",
+      "title": "Dynamic Programming Basics",
+      "description": "Fundamental dynamic programming problems that every aspiring programmer should solve.",
+      "problems": [
+        {
+          "number": "1463",
+          "title": "Make It 1",
+          "description": "A classic DP problem.",
+          "url": "https://www.acmicpc.net/problem/1463"
+        },
+        {
+          "number": "2748",
+          "title": "Fibonacci Number 2",
+          "description": null,
+          "url": "https://www.acmicpc.net/problem/2748"
+        }
+      ]
+    },
+    {
+      "id": "ps-1698942696131",
+      "title": "그래프 이론 기초",
+      "description": "그래프를 순회, 분석하기 위한 핵심 알고리즘들",
+      "problems": [
+        {
+          "number": "1260",
+          "title": "DFS and BFS",
+          "description": "Implement both Depth-First Search and Breadth-First Search.",
+          "url": "https://www.acmicpc.net/problem/1260"
+        },
+        {
+          "number": "1560",
+          "title": "Bishop",
+          "description": "비숍이다",
+          "url": "https://www.acmicpc.net/problem/1560"
+        }
+      ]
+    },
+    {
+      "id": "ps-1",
+      "title": "Beginner's Luck",
+      "description": "A collection of introductory problems to get you started with competitive programming.",
+      "problems": [
+        {
+          "number": "1000",
+          "title": "A+B",
+          "description": "The most basic input and output problem.",
+          "url": "https://www.acmicpc.net/problem/1000"
+        },
+        {
+          "number": "2557",
+          "title": "Hello World",
+          "description": "The traditional first program.",
+          "url": "https://www.acmicpc.net/problem/2557"
+        },
+        {
+          "number": "10950",
+          "title": "A+B - 3",
+          "description": "A+B with multiple test cases.",
+          "url": "https://www.acmicpc.net/problem/10950"
+        }
+      ]
+    },
+    {
+      "id": "ps-1751545540244",
+      "title": "Level 1",
+      "description": "첫 시작하는 단계",
+      "problems": [
+        {
+          "number": "2557",
+          "title": "Hello World",
+          "description": "",
+          "url": "https://www.acmicpc.net/problem/2557"
+        }
+      ]
+    }
+  ]
+}
